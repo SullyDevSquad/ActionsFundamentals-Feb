@@ -1,0 +1,10 @@
+name: Hello World
+on:
+    repository_dispatch:
+        types: [hello-world]
+jobs:
+    say-hello:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Print Hello World
+              run: echo "${{ github.event.client_payload.message }}"
